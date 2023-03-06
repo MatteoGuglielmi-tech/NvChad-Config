@@ -76,7 +76,7 @@ M.general = {
         ["J"] = { ":m '>+1<CR>gv=gv", "Move line down" },
         ["K"] = { ":m '<-2<CR>gv=gv", "Move line up" },
         ["<leader>p"] = { '"_dP', "Replace selected text without yanking" },
-        ["<leader>d"] = { '"-d', "Delete selected text without yanking" }
+        ["<leader>d"] = { '"-d', "Delete selected text without yanking" },
     },
 
     x = {
@@ -217,7 +217,7 @@ M.lspconfig = {
             "floating diagnostic",
         },
 
-        ["d"] = {
+        ["d["] = {
             function()
                 vim.diagnostic.goto_prev()
             end,
@@ -484,21 +484,30 @@ M.gitsigns = {
     },
 }
 
---M.markdown_preview = {
---  ["<leader>mp"] = { ":MarkdownPreview<CR>", "Markdown preview" },
---  ["<leader>mc"] = { ":MarkdownPreviewStop<CR>", "Close markdown preview" },
---}
---
---M.fugitive = {
---  ["<leader>gd"] = { ":Gdiffsplit<CR>", "Git diff" },
---  ["<leader>gvd"] = { ":Gvdiffsplit<CR>", "Git vdiff" },
---  ["<leader>gb"] = { ":Gblame<CR>", "Git blame" },
---  ["<leader>gl"] = { ":Git pull<CR>", "Git pull" },
---}
---
---M.gv = {
---  ["<leader>gv"] = { ":GV<CR>", "Git history" },
---  ["<leader>gvf"] = { ":GV!<CR>", "Git history current file" }
---}
---
+M.markdown_preview = {
+    plugin = true,
+    n = {
+        ["<leader>mp"] = { ":MarkdownPreview<CR>", "Markdown preview" },
+        ["<leader>mc"] = { ":MarkdownPreviewStop<CR>", "Close markdown preview" },
+    },
+}
+
+M.fugitive = {
+    plugin = true,
+    n = {
+        ["<leader>gd"] = { ":Gdiffsplit<CR>", "Git diff" },
+        ["<leader>gvd"] = { ":Gvdiffsplit<CR>", "Git vdiff" },
+        ["<leader>gb"] = { ":Gblame<CR>", "Git blame" },
+        ["<leader>gl"] = { ":Git pull<CR>", "Git pull" },
+    },
+}
+
+M.gv = {
+    plugin = true,
+    n = {
+        ["<leader>gv"] = { ":GV<CR>", "Git history" },
+        ["<leader>gvf"] = { ":GV!<CR>", "Git history current file" },
+    },
+}
+
 return M
