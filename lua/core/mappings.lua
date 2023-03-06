@@ -487,8 +487,8 @@ M.gitsigns = {
 M.markdown_preview = {
     plugin = true,
     n = {
-        ["<leader>mp"] = { ":MarkdownPreview<CR>", "Markdown preview" },
-        ["<leader>mc"] = { ":MarkdownPreviewStop<CR>", "Close markdown preview" },
+        ["<leader>mp"] = { ":MarkdownPreview <CR>", "Markdown preview" },
+        ["<leader>mc"] = { ":MarkdownPreviewStop <CR>", "Close markdown preview" },
     },
 }
 

@@ -221,7 +221,16 @@ local plugins = {
     ["tpope/vim-rhubarb"] = {},
     ["junegunn/gv.vim"] = {},
 
-    ["iamcco/markdown-preview.nvim"] = { run = "cd app && yarn install" },
+    ["iamcco/markdown-preview.nvim"] = {
+        run = "cd app && npm install",
+        config = function()
+            require("plugins.configs.others").markdown_preview()
+        end,
+        setup = function()
+            require("core.utils").load_mappings "markdown_preview"
+        end,
+        ft = { "markdown" },
+    },
 }
 
 -- Load all plugins
